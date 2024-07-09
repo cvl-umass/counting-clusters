@@ -1,0 +1,11 @@
+# local package
+# -e .
+
+# external requirements (needed for wildlife-datasets)
+numpy
+scipy
+scikit-image
+scikit-learn
+pandas
+matplotlib
+tqdm
