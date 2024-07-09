@@ -1,0 +1,6 @@
+data/
+features/
+src/__pycache__/
+src/datasets/__pycache__/
+
+*.swp
