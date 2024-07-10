@@ -1,8 +1,8 @@
 <h1 align="center">Visual Re-ID for Population Size Estimation with Nested Importance Sampling</h1>
 
-Python implementation for [Human-in-the-Loop Visual Re-ID for Population Size Estimation](https://arxiv.org/abs/2312.05287).
-
 ![title_image](main.png)
+
+Python implementation for [Human-in-the-Loop Visual Re-ID for Population Size Estimation](https://arxiv.org/abs/2312.05287).
 
 
 ## Getting started
