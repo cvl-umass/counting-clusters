@@ -59,11 +59,15 @@ args.pretraining = 'megad'
 features, meta = load_features(args)
 
 print(features.shape)
-# >>> (6280, 1536)
 print(len(meta))
-# >>> 6280
 print(meta[0])
-# >>> {'id': 0, 'label': 0, 'filename': 'MacaqueFaces/Random/Teal/Macaque_Face_5185.jpg'}
+```
+
+The code above  should display:
+```
+>>> (6280, 1536)
+>>> 6280
+>>> {'id': 0, 'label': 0, 'filename': 'MacaqueFaces/Random/Teal/Macaque_Face_5185.jpg'}
 ```
 
 ## Run Nested-IS estimator
@@ -73,10 +77,14 @@ As default the script will run nested-IS and nested-MC baselines 10 times with ~
 The script will take around 1 minute for the MacaqueFaces dataset. You can run the estimator with:
 ```
 python run_estimator.py --dataset MacaqueFaces --runs 10
-# >>> [loading MacaqueFaces-L-384-megad features...] done (6280, 1536) [0.0s]
-# >>> [creating GT matrix...] done (6280, 6280) [4.4s]
-# >>> [calculating similarity matrix (cosine)...] done (6280, 6280) [18.8s]
-# >>> [running nested-MC and nested-NIS (10 runs)...] done [0.8m]
+```
+
+The previous command line should display the following:
+```
+>>> [loading MacaqueFaces-L-384-megad features...] done (6280, 1536) [0.0s]
+>>> [creating GT matrix...] done (6280, 6280) [4.4s]
+>>> [calculating similarity matrix (cosine)...] done (6280, 6280) [18.8s]
+>>> [running nested-MC and nested-NIS (10 runs)...] done [0.8m]
 ```
 
 The script will save the results as `results_<dataset>_<model>_<pretraining>.pdf`.
