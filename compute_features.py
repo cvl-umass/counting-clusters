@@ -26,8 +26,8 @@ def parse_args():
     parser.add_argument('--gpu', default='', type=str, help='CUDA visible device')
     parser.add_argument('--cuda', action='store_true', help='enables CUDA training')
     parser.add_argument('--save_dir', type=str, default='features', help='for features')
-    parser.add_argument('--dataset', type=str, default='cub', help='for features')
-    parser.add_argument('--model', type=str, default='B-224', help='for features')
+    parser.add_argument('--dataset', type=str, default='MacaqueFaces', help='for features')
+    parser.add_argument('--model', type=str, default='L-384', help='for features')
     args = parser.parse_args()
     return args
 

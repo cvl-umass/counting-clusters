@@ -1,9 +1,11 @@
 import os
+import sys
 import time
 import argparse
 import numpy as np
 from os.path import join
 
+sys.path.insert(0, 'src')
 from methods import nested_is, nested_mc, calculate_similarity
 from utils_ import load_features, plot_results
 
@@ -14,12 +16,12 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Estimate population size in a dataset')
     parser.add_argument('--feats_dir', type=str, default='features', help='for features')
     parser.add_argument('--dataset', type=str, default='MacaqueFaces', help='for features')
-    parser.add_argument('--model', type=str, default='megad', help='for features')
-    parser.add_argument('--pretraining', type=str, default='L-384', help='for features')
+    parser.add_argument('--model', type=str, default='L-384', help='for features')
+    parser.add_argument('--pretraining', type=str, default='megad', help='for features')
     parser.add_argument('--metric', type=str, default='cosine', help='for similarity')
     parser.add_argument('--ratio', type=int, default=1, help='Nn/Nv ratio (use 7 for GiraffeZebraID)')
     parser.add_argument('--tau', type=float, default=0.5, help='temperature for similarity softmax')
-    parser.add_argument('--runs', type=int, default=100, help='for error calculation')
+    parser.add_argument('--runs', type=int, default=10, help='number of runs to plot results')
     parser.add_argument('--seed', type=int, default=0, help='seed for features')
     parser.add_argument('--verbose', action='store_true', help='print intermediate progress')
     args = parser.parse_args()

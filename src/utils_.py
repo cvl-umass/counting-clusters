@@ -15,8 +15,8 @@ def load_features(args):
         meta = json.load(f)
     return features, meta
 
-def plot_results(f_hat_nis_all, ci_nis_all, f_hat_mc_all, ci_mc_all, x, args, n_cats, lw=1.5, fs=12):
-    fig, ax = plt.subplots(1,1, figsize=(2.2,2.0))
+def plot_results(f_hat_nis_all, ci_nis_all, f_hat_mc_all, ci_mc_all, x, args, n_cats, lw=1.5, fs=9):
+    fig, ax = plt.subplots(1,1, figsize=(2.7,2.3))
     plt.plot(x, f_hat_nis_all, color='maroon', linestyle='--', linewidth=lw, label='Nested-IS') 
     plt.fill_between(x, np.array(f_hat_nis_all)-np.array(ci_nis_all),
                                                  np.array(f_hat_nis_all)+np.array(ci_nis_all),
@@ -26,11 +26,13 @@ def plot_results(f_hat_nis_all, ci_nis_all, f_hat_mc_all, ci_mc_all, x, args, n_
                                                  np.array(f_hat_mc_all)+np.array(ci_mc_all),
                                                  alpha=0.1, edgecolor='teal', facecolor='teal')
     plt.hlines(y=n_cats, xmin=-1, xmax=x[-1], color='black', linewidth=2, alpha=0.5, label='GT')
-    plt.title('%s (%s)'%(args.dataset, args.model), fontsize=fs-3)
-    plt.xticks([0, 0.004, 0.008], [0, '0.004%', '0.008%'], rotation=0, fontsize=fs-3)
+    plt.title('%s (%s) %d runs'%(args.dataset, args.model, args.runs), fontsize=fs)
+    plt.ylabel('Estimated count', fontsize=fs)
+    plt.xlabel('# sampled pairs / # total edges', fontsize=fs)
+    plt.xticks([0, 0.004, 0.008], [0, '0.004%', '0.008%'], rotation=0, fontsize=fs)
     plt.xlim(-0.001, 0.012)
     plt.grid(True, color='gray', linestyle=':', linewidth=0.5)
-    plt.legend()
+    plt.legend(fontsize=fs)
     fig.tight_layout()
     plt.savefig('results_%s_%s_%s.pdf'%(args.dataset, args.model, args.pretraining), dpi=150)
     plt.show()
