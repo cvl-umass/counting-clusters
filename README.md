@@ -70,7 +70,7 @@ print(meta[0])
 
 To run our nested-IS estimator no GPU is required. 
 As default the script will run nested-IS and nested-MC baselines 10 times with ~70 increasing values of number of samples, and plot the mean results with confidence intervals for every number of samples (as presented in our paper). 
-The script will take around 1 minute for the MacaqueFaces dataset. You ca run the estimator with:
+The script will take around 1 minute for the MacaqueFaces dataset. You can run the estimator with:
 ```
 python run_estimator.py --dataset MacaqueFaces --runs 10
 # >>> [loading MacaqueFaces-L-384-megad features...] done (6280, 1536) [0.0s]
