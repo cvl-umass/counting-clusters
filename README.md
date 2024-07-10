@@ -1,3 +1,4 @@
+![title_image](main.png)
 
 <h1 align="center">Visual Re-ID for Population Size Estimation with Nested Importance Sampling</h1>
 
