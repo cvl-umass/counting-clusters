@@ -131,4 +131,4 @@ Our approach uses importance sampling similar to ISCount and DISCount but tackle
 
 ## Acknowledgements
 
-This work is supported by the National Science Foundation (NSF) of the United States under grants \#1749854, \#1749833, and \#2329927. We thank Hung Le for initial discussions and the Wildlife Datasets team for publicly releasing the datasets and models for animal Re-ID.
+This work is supported by the National Science Foundation (NSF) of the United States under grants \#1749854, \#1749833, and \#2329927. We thank Hung Le and Cameron Musco for initial discussions and the Wildlife Datasets team for publicly releasing the datasets and models for animal Re-ID.
