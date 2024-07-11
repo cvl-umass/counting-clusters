@@ -44,12 +44,12 @@ To compute the image features for MacaqueFaces dataset run:
 CUDA_VISIBLE_DEVICES=0 python compute_features.py --dataset MacaqueFaces --cuda
 ```
 
-Computing the features for the entire dataset with a MegaDescriptor-L-380 takes 2-3 minutes on a RTX 2080 Ti, and around 1 hour on a CPU.
+Computing the features for the entire dataset takes 2-3 minutes on a RTX 2080 Ti GPU and around 1 hour on a CPU.
 This repository is ready to run with any of the wildlife-datasets included in our paper (i.e., CTai, CZoo, MacaqueFaces, WhaleSharkID, GiraffeZebraID, OpenCows2020, and IPanda50).
 Modify `load_dataset()` in `src/utils_.py` to add additional datasets.
 
-The pre-computed features will be saved into `features/<dataset name>/` as `<model>_<pretraining>.npy` and the metadata (labels, filenames, etc.) as `<model>_<pretraining>_meta.json`.
-You can load the precomputed features using:
+The features will be saved into `features/<dataset name>/` as `<model>_<pretraining>.npy` and the metadata (labels, filenames, etc.) as `<model>_<pretraining>_meta.json`.
+You can load them using:
 
 ```
 from utils_ import load_features
